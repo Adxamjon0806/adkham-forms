@@ -1,8 +1,9 @@
 import axios from "axios";
 
-export const API_URL = "http://localhost:8000/";
+export const API_URL = "https://server-for-forms.onrender.com";
 
 // https://server-for-forms.onrender.com
+// http://localhost:8000/
 
 export const $api = axios.create({
   withCredentials: true,
