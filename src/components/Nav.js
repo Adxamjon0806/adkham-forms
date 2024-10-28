@@ -51,7 +51,7 @@ const Nav = () => {
               className="border-2 border-black px-3 py-2 rounded-xl"
               to={"/registration"}
             >
-              Sign In
+              Sign Up
             </Link>
           </div>
         )}

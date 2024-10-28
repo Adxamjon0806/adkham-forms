@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import Logo from "../images/Logo.webp";
 import UserFetch from "../Api/UserFetchApi";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   async function logIn(e) {
     e.preventDefault();
     try {
       await UserFetch.login(email, password, dispatch);
+      navigate("/");
     } catch (e) {
       console.log(e);
     }
@@ -45,6 +48,9 @@ const Login = () => {
           >
             Log In
           </button>
+          <Link className="ml-4" to={"/"}>
+            Back To Home Page
+          </Link>
         </form>
       </div>
     </header>
